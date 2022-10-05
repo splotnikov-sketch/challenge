@@ -1,0 +1,4 @@
+export const PERFORMING_REQUEST = 'PERFORMING_REQUEST';
+export const SET_RESULTS = 'SET_RESULTS';
+export const SET_ERRORS = 'SET_ERRORS';
+export const CLEAR_ERRORS = 'CLEAR_ERRORS';

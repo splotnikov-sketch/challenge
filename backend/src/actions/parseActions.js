@@ -11,16 +11,10 @@ const parseContent = async (url) => {
 	const bodyRegex = /<body[^>]*>((.|[\n\r])*)<\/body>/im;
 	const body = bodyRegex.exec(html);
 
-	//console.log('body');
-	//console.log(body);
-
 	const bodyCleared = body[1].replace(/<[^>]*>/g, '');
 
 	const scriptRegex = /<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi;
 	const bodyNoScript = bodyCleared.replace(scriptRegex, '');
-
-	//console.log('bodyNoScript');
-	//console.log(bodyNoScript);
 
 	const bodyWords = bodyNoScript
 		.split(' ')
