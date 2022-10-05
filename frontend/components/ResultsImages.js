@@ -17,7 +17,7 @@ const ResultsImages = () => {
 	}
 
 	return (
-		<Carousel>
+		<Carousel variant='dark'>
 			{state.data.images.map((x, index) => {
 				const caption = `Slide # ${index}`;
 
@@ -27,8 +27,11 @@ const ResultsImages = () => {
 						<Carousel.Caption>
 							<h3>{caption}</h3>
 							<p>
-								Nulla vitae elit libero, a pharetra augue mollis
-								interdum.
+								Lorem ipsum dolor sit amet, consectetur
+								adipiscing elit. Nullam pellentesque lorem vitae
+								quam euismod, eu semper eros sagittis.
+								Pellentesque ullamcorper eros vitae sem
+								scelerisque, non porta ante ultricies
 							</p>
 						</Carousel.Caption>
 					</Carousel.Item>

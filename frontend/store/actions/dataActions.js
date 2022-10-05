@@ -7,12 +7,25 @@ import {
 
 import axios from 'axios';
 
+const isGoodUrl = (url) => {
+	const regEx =
+		/(http(s)?:\/\/.)?(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/g;
+
+	return url.match(regEx);
+};
+
 export const getData = (dispatch) => {
 	return async (url) => {
-		console.log(url);
-
 		dispatch({ type: CLEAR_ERRORS });
 		dispatch({ type: PERFORMING_REQUEST });
+
+		if (!isGoodUrl(url)) {
+			dispatch({
+				type: SET_ERRORS,
+				payload: { errors: 'Wrong url format' },
+			});
+			return;
+		}
 
 		try {
 			const response = await axios({
@@ -24,9 +37,6 @@ export const getData = (dispatch) => {
 			});
 
 			const { data } = response;
-
-			console.log('response');
-			console.log(response);
 
 			dispatch({
 				type: SET_RESULTS,

@@ -37,8 +37,6 @@ const parseContent = async (url) => {
 		return b[1] - a[1];
 	});
 
-	//console.log(JSON.stringify(sortable));
-
 	return {
 		url: url,
 		images: images,

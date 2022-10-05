@@ -30,6 +30,11 @@ const Search = () => {
 								placeholder='Enter Url'
 								ref={refUrl}
 							/>
+							{state.data.errors && (
+								<p className='text-danger'>
+									{state.data.errors}
+								</p>
+							)}
 						</Form.Group>
 						<Button
 							variant='outline-primary'

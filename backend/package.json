@@ -14,7 +14,6 @@
 		"build": "babel ./src --out-dir dist",
 		"prod": "cross-env NODE_ENV=production npm-run-all clean build server:prod",
 		"watch": "nodemon",
-		"test": "cross-env NODE_ENV=test jest --collect-coverage --testTimeout=10000",
 		"docker-prod": "cross-env NODE_ENV=production npm-run-all server:prod"
 	},
 	"dependencies": {
